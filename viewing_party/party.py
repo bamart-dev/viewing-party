@@ -17,7 +17,8 @@ result = create_movie("", "Horror", "5")
 print(result)
 
 def add_to_watched(user_data, movie):
-    pass
+    user_data["watched"].append(movie)
+    return user_data
 
 def add_to_watchlist(user_data, movie):
     pass
