@@ -158,7 +158,7 @@ def test_moves_movie_from_watchlist_to_empty_watched():
     # Assert
     assert len(updated_data["watchlist"]) == 0
     assert len(updated_data["watched"]) == 1
-    assert MOVIE_TITLE_1 in janes_data["watched"] == True #leaving to see if this works, same for below
+    assert MOVIE_TITLE_1 in janes_data["watched"] #leaving to see if this works, same for below
     assert MOVIE_TITLE_1 in [movie"title"] for movie in updated_data["watched"] #might work, testing this and above
     
     # raise Exception("Test needs to be completed.")
@@ -184,8 +184,8 @@ def test_moves_movie_from_watchlist_to_watched():
     # Assert
     assert len(updated_data["watchlist"]) == 1
     assert len(updated_data["watched"]) == 2
-    assert movie_to_watch in updated_data["watched"] == True #We might not need the "== True/False" statements, we'll figure it out
-    assert movie_to_watch not in updated_data["watchlist"] == True
+    assert movie_to_watch in updated_data["watched"]
+    assert movie_to_watch not in updated_data["watchlist"]
 
     # raise Exception("Test needs to be completed.")
     # *******************************************************************************************
