@@ -140,7 +140,7 @@ def test_adds_movie_to_non_empty_user_watchlist():
     assert movie in updated_data["watchlist"]
     assert FANTASY_2 in updated_data["watchlist"]
 
-# @pytest.mark.skip()
+@pytest.mark.skip()
 def test_moves_movie_from_watchlist_to_empty_watched():
     # Arrange
     janes_data = {
@@ -158,13 +158,15 @@ def test_moves_movie_from_watchlist_to_empty_watched():
     # Assert
     assert len(updated_data["watchlist"]) == 0
     assert len(updated_data["watched"]) == 1
+    assert MOVIE_TITLE_1 in janes_data["watched"] == True #leaving to see if this works, same for below
+    assert MOVIE_TITLE_1 in [movie"title"] for movie in updated_data["watched"] #might work, testing this and above
     
-    raise Exception("Test needs to be completed.")
+    # raise Exception("Test needs to be completed.")
     # *******************************************************************************************
     # ****** Add assertions here to test that the correct movie was added to "watched" **********
     # *******************************************************************************************
 
-# @pytest.mark.skip()
+@pytest.mark.skip()
 def test_moves_movie_from_watchlist_to_watched():
     # Arrange
     movie_to_watch = HORROR_1
@@ -182,8 +184,10 @@ def test_moves_movie_from_watchlist_to_watched():
     # Assert
     assert len(updated_data["watchlist"]) == 1
     assert len(updated_data["watched"]) == 2
-    
-    raise Exception("Test needs to be completed.")
+    assert movie_to_watch in updated_data["watched"] == True #We might not need the "== True/False" statements, we'll figure it out
+    assert movie_to_watch not in updated_data["watchlist"] == True
+
+    # raise Exception("Test needs to be completed.")
     # *******************************************************************************************
     # ****** Add assertions here to test that the correct movie was added to "watched" **********
     # *******************************************************************************************
