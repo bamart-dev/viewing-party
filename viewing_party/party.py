@@ -6,7 +6,7 @@ def create_movie(title, genre, rating):
         return None
 
     # if title and genre and rating:
-    
+
     movie_info["title"] = title
     movie_info["genre"] = genre
     movie_info["rating"] = rating
@@ -21,11 +21,17 @@ def add_to_watched(user_data, movie):
     return user_data
 
 def add_to_watchlist(user_data, movie):
-    pass
+    user_data["watchlist"].append(movie)
+
+    return user_data
 
 def watch_movie(user_data, title):
-    pass
-    
+    for movie in user_data["watchlist"]:
+        if movie["title"] == title:
+            user_data["watchlist"].remove(movie)
+            user_data["watched"].append(movie)
+
+    return user_data
 
 
 # -----------------------------------------
@@ -37,7 +43,7 @@ def watch_movie(user_data, title):
 # ------------- WAVE 3 --------------------
 # -----------------------------------------
 
-        
+
 # -----------------------------------------
 # ------------- WAVE 4 --------------------
 # -----------------------------------------
@@ -45,4 +51,3 @@ def watch_movie(user_data, title):
 # -----------------------------------------
 # ------------- WAVE 5 --------------------
 # -----------------------------------------
-
