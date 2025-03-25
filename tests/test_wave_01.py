@@ -163,13 +163,8 @@ def test_moves_movie_from_watchlist_to_empty_watched():
     # Assert
     assert len(updated_data["watchlist"]) == 0
     assert len(updated_data["watched"]) == 1
-    assert updated_data["watched"][0] == expected #leaving to see if this works, same for below
-    # assert MOVIE_TITLE_1 in [movie["title"] for movie in updated_data["watched"]] #might work, testing this and above
+    assert updated_data["watched"][0] == expected
 
-    # raise Exception("Test needs to be completed.")
-    # *******************************************************************************************
-    # ****** Add assertions here to test that the correct movie was added to "watched" **********
-    # *******************************************************************************************
 
 # @pytest.mark.skip()
 def test_moves_movie_from_watchlist_to_watched():
@@ -192,10 +187,6 @@ def test_moves_movie_from_watchlist_to_watched():
     assert updated_data["watched"][-1] == movie_to_watch
     assert movie_to_watch not in updated_data["watchlist"]
 
-    # raise Exception("Test needs to be completed.")
-    # *******************************************************************************************
-    # ****** Add assertions here to test that the correct movie was added to "watched" **********
-    # *******************************************************************************************
 
 # @pytest.mark.skip()
 def test_does_nothing_if_movie_not_in_watchlist():
