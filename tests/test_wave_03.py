@@ -58,10 +58,6 @@ def test_friends_unique_movies_not_duplicated():
     movie_titles = [movie["title"] for movie in friends_unique_movies]
     assert len(movie_titles) == len(set(movie_titles))
     assert INTRIGUE_3 not in movie_titles
-    # raise Exception("Test needs to be completed.")
-    # *************************************************************************************************
-    # ****** Add assertions here to test that the correct movies are in friends_unique_movies **********
-    # **************************************************************************************************
 
 # @pytest.mark.skip()
 def test_friends_not_unique_movies():
