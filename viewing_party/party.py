@@ -167,7 +167,7 @@ def get_rec_from_favorites(user_data):
     friends_watched = set()
     for friend in user_data["friends"]:
         for movie in friend["watched"]:
-            friends_watched.add(movie["title"])
+            friends_watched.append(movie["title"])
 
     user_watched = set()
     for movie in user_data["watched"]:
